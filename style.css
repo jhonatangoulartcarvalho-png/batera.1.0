@@ -1,1 +1,681 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+
+/* MENU */
+
+header {
+    width: 100%;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8, 8, 8, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.logo span,
+footer span {
+    color: #ff4d00;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff4d00;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 10%;
+    overflow: hidden;
+    position: relative;
+    background:
+        radial-gradient(circle at 75% 50%, rgba(255, 77, 0, 0.18), transparent 30%),
+        #080808;
+}
+
+.hero-text {
+    width: 55%;
+    z-index: 2;
+}
+
+.mini-title,
+.section-title p {
+    color: #ff4d00;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 120px);
+    line-height: 0.9;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #ff4d00;
+}
+
+.hero-text > p:not(.mini-title) {
+    color: #aaa;
+    line-height: 1.7;
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+.btn,
+.quiz-btn {
+    display: inline-block;
+    padding: 16px 28px;
+    background: #ff4d00;
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover,
+.quiz-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(255, 77, 0, 0.3);
+}
+
+.hero-drum {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.drum-emoji {
+    font-size: clamp(150px, 20vw, 280px);
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+}
+
+.sound-circle {
+    position: absolute;
+    border: 2px solid rgba(255, 77, 0, 0.4);
+    border-radius: 50%;
+}
+
+.circle1 {
+    width: 300px;
+    height: 300px;
+}
+
+.circle2 {
+    width: 450px;
+    height: 450px;
+    animation: pulse 2s infinite;
+}
+
+
+/* SEÇÕES */
+
+section {
+    padding: 100px 10%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: clamp(30px, 5vw, 55px);
+}
+
+
+/* CARDS */
+
+.paths {
+    background: #0d0d0d;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 35px 25px;
+    background: #151515;
+    border: 1px solid #252525;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #ff4d00;
+}
+
+.card-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #999;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.card a {
+    color: #ff4d00;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+/* ACADEMIA */
+
+.academy {
+    background: #080808;
+}
+
+.levels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.level {
+    position: relative;
+    padding: 40px 30px;
+    background: #111;
+    border: 1px solid #222;
+    overflow: hidden;
+}
+
+.level-number {
+    font-size: 80px;
+    font-weight: 900;
+    color: #222;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.level h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.level p {
+    margin-bottom: 25px;
+    font-size: 12px;
+    position: relative;
+}
+
+.level ul {
+    list-style: none;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.level li {
+    color: #aaa;
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+}
+
+.level button,
+.controls button,
+.rhythm button,
+.drummer-card button {
+    padding: 12px 20px;
+    background: transparent;
+    border: 1px solid #ff4d00;
+    color: #ff4d00;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.level button:hover,
+.controls button:hover,
+.rhythm button:hover,
+.drummer-card button:hover {
+    background: #ff4d00;
+    color: white;
+}
+
+
+/* LABORATÓRIO */
+
+.laboratory {
+    background: #101010;
+}
+
+.lab-description {
+    text-align: center;
+    color: #999;
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+
+.drum-kit {
+    max-width: 900px;
+    min-height: 450px;
+    margin: auto;
+    position: relative;
+    background:
+        radial-gradient(circle, rgba(255, 77, 0, 0.08), transparent 50%);
+}
+
+.drum-piece {
+    position: absolute;
+    border-radius: 50%;
+    border: 5px solid #333;
+    background: #1b1b1b;
+    color: white;
+    cursor: pointer;
+    transition: 0.1s;
+    font-weight: bold;
+}
+
+.drum-piece span {
+    display: block;
+    color: #ff4d00;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.drum-piece:hover,
+.drum-piece.active {
+    transform: scale(0.95);
+    background: #ff4d00;
+    border-color: #ff7b45;
+}
+
+.drum-piece:hover span,
+.drum-piece.active span {
+    color: white;
+}
+
+.crash {
+    width: 180px;
+    height: 80px;
+    top: 30px;
+    left: 50px;
+}
+
+.hihat {
+    width: 170px;
+    height: 80px;
+    top: 180px;
+    left: 80px;
+}
+
+.tom1 {
+    width: 150px;
+    height: 100px;
+    top: 120px;
+    left: 330px;
+}
+
+.tom2 {
+    width: 150px;
+    height: 100px;
+    top: 120px;
+    right: 200px;
+}
+
+.snare {
+    width: 180px;
+    height: 110px;
+    bottom: 70px;
+    left: 200px;
+}
+
+.kick {
+    width: 230px;
+    height: 180px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.kick:hover,
+.kick.active {
+    transform: translateX(-50%) scale(0.95);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+
+/* RITMOS */
+
+.rhythms {
+    background: #080808;
+}
+
+.rhythm-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.rhythm {
+    padding: 40px 15px;
+    text-align: center;
+    background: #151515;
+    border: 1px solid #242424;
+    transition: 0.3s;
+}
+
+.rhythm:hover {
+    transform: translateY(-8px);
+    border-color: #ff4d00;
+}
+
+.rhythm span {
+    font-size: 45px;
+}
+
+.rhythm h3 {
+    margin: 20px 0;
+}
+
+
+/* QUIZ */
+
+.quiz-section {
+    background: #101010;
+}
+
+.quiz-box {
+    max-width: 700px;
+    margin: auto;
+    padding: 50px;
+    background: #161616;
+    border: 1px solid #292929;
+    text-align: center;
+}
+
+.quiz-box h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.quiz-box p {
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+#answers {
+    display: grid;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.answer {
+    padding: 15px;
+    background: #202020;
+    border: 1px solid #333;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.answer:hover {
+    border-color: #ff4d00;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* BATERISTAS */
+
+.drummers {
+    background: #080808;
+}
+
+.drummer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.drummer-card {
+    text-align: center;
+    padding: 30px;
+    background: #121212;
+    border: 1px solid #242424;
+}
+
+.drummer-photo {
+    height: 220px;
+    background: #1d1d1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.drummer-card h3 {
+    margin-bottom: 10px;
+}
+
+.drummer-card p {
+    color: #ff4d00;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+
+/* CONQUISTAS */
+
+.achievements {
+    background: #101010;
+}
+
+.achievement-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    gap: 20px;
+}
+
+.achievement-list div {
+    font-size: 50px;
+    padding: 25px;
+    background: #181818;
+}
+
+.achievement-list span {
+    font-size: 11px;
+    color: #aaa;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 60px 10%;
+    text-align: center;
+    background: #050505;
+}
+
+footer h2 {
+    font-size: 30px;
+}
+
+footer > p {
+    color: #888;
+    margin: 15px 0;
+}
+
+.footer-links {
+    margin: 25px 0;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.copyright {
+    font-size: 11px;
+}
+
+
+/* ANIMAÇÕES */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text,
+    .hero-drum {
+        width: 100%;
+    }
+
+    .hero-text {
+        margin-bottom: 50px;
+    }
+
+    .cards,
+    .levels {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rhythm-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .drummer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 70px 6%;
+    }
+
+    .cards,
+    .levels,
+    .rhythm-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .drum-kit {
+        transform: scale(0.75);
+        transform-origin: top center;
+        margin-bottom: -100px;
+    }
+
+    .quiz-box {
+        padding: 30px 20px;
+    }
+}
